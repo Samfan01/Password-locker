@@ -2,7 +2,7 @@ class Credential:
     '''
     class to  create new instances of account credentials
     '''
-    Credential_list = []
+    credential_list = []
     
     def __init__(self,account_name,account_password):
         '''
@@ -16,3 +16,9 @@ class Credential:
         method to save credential
         '''
         Credential.credential_list.append(self)
+        
+    def delete_credential(self):
+        '''
+        method to delete saved credentials
+        '''
+        Credential.credential_list.remove(self)

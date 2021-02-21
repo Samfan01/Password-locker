@@ -37,6 +37,16 @@ class TestUser(unittest.TestCase):
         '''
         self.new_credential.save_credential()
         self.assertEqual(len(Credential.credential_list),1)
+    def test_delete_credential(self):
+        '''
+        test to see if we can remove credential from list
+        '''
+        self.new_credential.save_credential()
+        test_credential = Credential('Netflix','watch100')
+        test_credential.save_credential()
+        
+        self.new_credential.delete_credential()
+        self.assertEqual(len(Credential.credential_list),1)
     
     
 if __name__ == '__main__':
