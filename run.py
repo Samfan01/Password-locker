@@ -12,6 +12,12 @@ def save_user():
     Function to save user
     '''
     user.save_user()
+def delete_user():
+    '''
+    Function to delete a user
+    '''
+    user.delete_user()
+
 
 
 print('**'*15+'PASSWORD-LOCKER'+'**'*15)
