@@ -59,6 +59,18 @@ class TestUser(unittest.TestCase):
         found_credential = Credential.find_by_account_name('Netflix')
         
         self.assertEqual(found_credential.account_password,test_credential.account_password)
+    def test_credential_exists(self):
+        '''
+        test to check if we can return a Boolean 
+        '''
+        
+        self.new_credential.save_credential()
+        test_credential = Credential('Netflix','watch100')
+        test_credential.save_credential()
+        
+        credential_exists = Credential.credential_exists('Netflix')
+        
+        self.assertTrue(credential_exists)
     
     
 if __name__ == '__main__':
