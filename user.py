@@ -17,3 +17,5 @@ class User:
         save_user method saves user objects into the user_list
         '''
         User.user_list.append(self)
+        
+    
