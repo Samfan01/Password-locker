@@ -39,7 +39,7 @@ class TestContact(unittest.TestCase):
         self.new_user.save_user()
         self.assertEqual(len(User.user_list),1)  
     
-    def save_multiple_user(self):
+    def test_save_multiple_user(self):
         '''
         test case to test if we can save multiple
         user objects in our user_list.
@@ -48,6 +48,19 @@ class TestContact(unittest.TestCase):
         test_user = User('Test','Test001')
         test_user.save_user()
         self.assertEqual(len(User.user_list),2)
-       
+    
+    def test_delete_user(self):
+        '''
+        test case te see if we can remove a user from the user_list
+        '''
+        
+        self.new_user.save_user()
+        test_user = User('Test','Test001')
+        test_user.save_user()
+        
+        self.new_user.delete_user()
+        self.assertEqual(len(User.user_list),1)
+        
+      
 if __name__=='__main__':
     unittest.main()
