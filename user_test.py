@@ -70,7 +70,7 @@ class TestContact(unittest.TestCase):
         test_user = User('Test','Test001')
         test_user.save_user()
         
-        found_user = user.find_by_username('Test')
+        found_user = User.find_by_username('Test')
         
         self.assertEqual(found_user.password,test_user.password)   
            
