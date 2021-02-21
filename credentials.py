@@ -11,4 +11,8 @@ class Credential:
         self.account_name = account_name
         self.account_password = account_password
         
-    
+    def save_credential(self):
+        '''
+        method to save credential
+        '''
+        Credential.credential_list.append(self)
