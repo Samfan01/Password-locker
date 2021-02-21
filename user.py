@@ -1,3 +1,5 @@
+import pyperclip
+
 class User:
     
     '''
@@ -58,5 +60,5 @@ class User:
         method that returns the user list
         '''
         return cls.user_list
-    
+
     

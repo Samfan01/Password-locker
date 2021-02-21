@@ -1,4 +1,5 @@
 import unittest
+import pyperclip
 from user import User
 
 class TestContact(unittest.TestCase):
@@ -94,6 +95,7 @@ class TestContact(unittest.TestCase):
         '''
         
         self.assertEqual(User.display_users(),User.user_list)
-           
+    
+  
 if __name__=='__main__':
     unittest.main()
