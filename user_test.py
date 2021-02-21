@@ -61,6 +61,18 @@ class TestContact(unittest.TestCase):
         self.new_user.delete_user()
         self.assertEqual(len(User.user_list),1)
         
-      
+    def test_find_user_by_username(self):
+        '''
+        test case to test if we can find a saved user
+        by user name and display the information.
+        '''
+        self.new_user.save_user()
+        test_user = User('Test','Test001')
+        test_user.save_user()
+        
+        found_user = user.find_by_username('Test')
+        
+        self.assertEqual(found_user.password,test_user.password)   
+           
 if __name__=='__main__':
     unittest.main()
