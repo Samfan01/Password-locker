@@ -6,7 +6,7 @@ An amazing application that will help us manage our passwords and even generate 
 #### By **Douglas Samphan © 2021.**
 
 ## Setup/Installation Requirements
-* run the ./run.py file 
+* run the run.py file 
 * The application guides you through it with short and clear dirctives.
 
 # Development
