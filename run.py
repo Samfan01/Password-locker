@@ -59,7 +59,7 @@ def password_generetor():
     password = ''.join(random.choices(P, k=p_length))
     
     return password    
-def display_credential(credential):
+def display_credential():
     '''
     function to display credentials
     '''
@@ -160,8 +160,8 @@ def main():
                 print('__'*30)
     
             elif choice == 'sc':
-                credential = new_credential
-                if display_credential(credential):
+        
+                if display_credential():
                     print('Here are your saved credentials.')
                     print('\n')
                 
