@@ -114,10 +114,80 @@ def main():
                 break
             else:
                 print('Please respond with a valid option either "m" or "g"')
+                break
+            
+            save_user(create_user(username,password))
+            break
+            
+    print(f'User: {username}, Password: {password}')
+    print(f'{name} you have successfully created your password locker account') 
+    print('__'*30)
+            
+    print('You can now add,save and view saved accounts and passwords ')   
                 
+    while True:
+            print('''Use:
+                 nc - New credential
+                 sc - See credential
+                 fc - Find credential
+              ''')
+            choice = input().lower()
+            if choice == 'nc':
+                print(f'''{name} Reply with "z" to make a password which we can
+                  store for you or with "g" and we will generate a random
+                  password for you.
+                  ''')
+                choice_rep = input().lower()
+            
+                if choice_rep == 'z':
+                    print('Enter account name: ')
+                    account_name = input()
+                    print('Enter account password: ')
+                    password = input()
                 
+                elif choice_rep == 'g':
+                    print('Enter account name: ')
+                    account_name = input()
+                    password = password_generetor()
+                    print(f'''{name} your credentials have been stored as
+                                  account name: {account_name}
+                                  account password: {password}''')
+                else:
+                    print('Use the options provided please')                
+                    save_credential(create_credential(account_name,password))
+                    break
+                print('Account credentials have been saved succesfully')
+                print('__'*30)
+    
+            elif choice == 'sc':
+                if display_credential(credential):
+                    print('Here are your saved credentials.')
+                    print('\n')
                 
+                for credential in display_credential():
+                    print(f'{credential.account_name} .....{credential.account_password}')
+                    print('\n')
+            
+                else:
+                    print('\n')
+                    print('You dont have any saved credentials as at yet.')
+                    print('\n')
                 
+            elif choice == 'fc':
+                print('Enter the name of the account you are searching for: ')
+                src == input().title()
+                if check_existing_credential(src):
+                    search_credential = find_credential(src)
+                    print(f'{search_credential.account_name}  {search_credential.account_password}')
+                    print('__'*30)
+                else:
+                    print(f'{name} the account you are looking for is not saved yet.')
+                break
+            else:
+                print('Kindly check your entry and try again.')
+            break
+
+    print('**'*30)
                 
 if __name__ == '__main__':
     main()
