@@ -160,12 +160,13 @@ def main():
                 print('__'*30)
     
             elif choice == 'sc':
+                credential = new_credential
                 if display_credential(credential):
                     print('Here are your saved credentials.')
                     print('\n')
                 
                 for credential in display_credential():
-                    print(f'{credential.account_name} .....{credential.account_password}')
+                    print(f'{Credential.account_name} .....{Credential.account_password}')
                     print('\n')
             
                 else:
@@ -174,8 +175,8 @@ def main():
                     print('\n')
                 
             elif choice == 'fc':
-                print('Enter the name of the account you are searching for: ')
-                src == input().title()
+                print('Enter the username of the account you are searching for: ')
+                src = input().title()
                 if check_existing_credential(src):
                     search_credential = find_credential(src)
                     print(f'{search_credential.account_name}  {search_credential.account_password}')
