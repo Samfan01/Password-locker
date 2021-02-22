@@ -21,7 +21,7 @@ def delete_user(user):
     Function to delete a user
     '''
     user.delete_user()
-def find_user(username)
+def find_user(username):
     '''
     Function that finds a user by username and returns 
     the user
@@ -37,7 +37,7 @@ def display_user():
     Function that returns all the saved users
     '''
     return User.display_user()
-def create_credential(account_name,account_password)
+def create_credential(account_name,account_password):
     '''
     Function to save new account
     '''
@@ -56,7 +56,7 @@ def password_generetor():
     P = string.ascii_uppercase + string.ascii_lowercase + string.digits
     print('Enter the length of your Password ')
     p_length = int(input())
-    password = ''.join(random.choices(P, k=pass_length))
+    password = ''.join(random.choices(P, k=p_length))
     
     return password    
 def display_credential(credential):
@@ -82,3 +82,42 @@ def find_credential(account_name):
 
 def main():
     print('**'*15+'PASSWORD-LOCKER'+'**'*15)
+    
+    name = input('Enter your name: ')
+    print(name+' welcome to Password Locker')
+    
+    print('  '*15+'Create new account'+'  '*15)
+    print(name+' type "n" to create a new password locker account ')
+
+    while True:
+        response = input().lower()
+        
+        if response == 'n':
+            print('__'*30)
+            
+            print('Enter your username ')
+            username = input()
+            
+            print(name+' would you like us to generate a password for you?')
+            print('''use
+                     g-for us to automatically generate a password for you
+                     m-for you to manually write your own password
+                     ''')
+            pref = input().lower()
+            print('\n')
+            if pref == 'm':
+                print('Enter your password: ')
+                password = input()
+            elif pref == 'g':
+                password = password_generetor()
+                print(f'Your generated password is{password}')
+                break
+            else:
+                print('Please respond with a valid option either "m" or "g"')
+                
+                
+                
+                
+                
+if __name__ == '__main__':
+    main()
